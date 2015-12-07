@@ -5,7 +5,12 @@ package net.simplifiedcoding.androidloginlogout;
  */
 public class Config {
     //URL to our login.php file
-    public static final String LOGIN_URL = "http://192.168.94.1/Android/LoginLogout/login.php";
+    public static final String LOGIN_URL = "http://iaraja.mohammedsohaib.com/mobile/login.php";
+    public static final String DATA_URL = "http://iaraja.mohammedsohaib.com/getData/getData.php?id=";
+    public static final String KEY_RECIPE_NAME = "recipe_name";
+    public static final String KEY_INGREDIENTS = "ingredients";
+    public static final String KEY_CM = "cm";
+    public static final String JSON_ARRAY = "result";
 
     //Keys for email and password as defined in our $_POST['key'] in login.php
     public static final String KEY_EMAIL = "email";

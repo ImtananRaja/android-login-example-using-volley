@@ -9,13 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
 
     //Textview to show currently logged in user
     private TextView textView;
-
+    private Button   getRecipes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +25,20 @@ public class ProfileActivity extends AppCompatActivity {
 
         //Initializing textview
         textView = (TextView) findViewById(R.id.textView);
-
+        getRecipes = (Button) findViewById(R.id.searchRecipes);
         //Fetching email from shared preferences
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String email = sharedPreferences.getString(Config.EMAIL_SHARED_PREF,"Not Available");
 
         //Showing the current logged in email to textview
         textView.setText("Current User: " + email);
+        getRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Intent register = new Intent (ProfileActivity.this, SearchActivity.class);
+                startActivity(register);
+            }
+        });
     }
 
     //Logout function

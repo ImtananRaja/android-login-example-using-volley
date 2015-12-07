@@ -16,4 +16,12 @@
         android:text="Large Text"
         android:id="@+id/textView" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Recipes"
+        android:id="@+id/searchRecipes"
+        android:layout_gravity="center_horizontal" />
+
+
 </LinearLayout>
